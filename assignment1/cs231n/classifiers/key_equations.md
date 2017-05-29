@@ -128,7 +128,7 @@ Not common to regularize different layers to different amounts.
 **Conclusion**   
 Most common to use a **single, global L2 regularization** strength that is cross-validated. It is also common to combine this with **dropout** applied after all layers. **p=0.5** is a reasonable default, but this can be tuned on validation data. Other methods including **batch normalization**， data augmentation，dropconnect，fractional max pooling. The idea is to **add some kind of randomness** during the training, **marginalize over the noise** during the testing.
 
-####1.6 Loss function  
+#### 1.6 Loss function  
 \[
 L = \frac{1}{N}\sum_i L_i
 \]
