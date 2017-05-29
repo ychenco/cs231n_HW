@@ -41,7 +41,7 @@ Improved version of ReLU
 It turns out to be ReLU, when   
 \[w_1 = b_1 = 0 \]  
 
-![activation_function](\pic\activation_function.png)
+![activation_function](pic/activation_function.png)
 #### 1.2 Setting number of layers and their sizes
 - For **neural network**, 3 layer outperform 2 layer, but when going even deeper **rarely helps** much more.
 
@@ -119,7 +119,7 @@ Enforce an absolute upper bound on the magnitude of the weight vector for every 
  \]  
 **Dropout**   
 While training, dropout is implemented by only keeping a neuron active with some probability p (a hyperparameter), or setting it to zero otherwise.  
-![dropout](\pic\dropout.png)
+![dropout](pic/dropout.png)
 
 **Bias regularization**  
 Not common and will not lead to significant worse performance  
@@ -314,20 +314,20 @@ maintain a second copy of the network’s weights in memory that maintains an ex
 - Form model ensembles for extra performance
 
 ####2.6 Example for paramter adjusting
-![loss and accuracy](pic\example1.png)
+![loss and accuracy](pic/example1.png)
 - The loss is decreasing more or less linearly, which seems to suggest that the **learning rate** may be too **low**. Moreover, there is no gap between the training and validation accuracy, suggesting that the model we used has **low capacity**, and that we should increase its size. 
 ### CNN  
 #### 1. Structure
 ConvNet is a sequence of Convolutional Layers, interspersed with activation functions( one CONV, one RELU)  
 **Convolutional layer**, output size: ``(N + pad*2 - F) / stride + 1 `` $\quad$  params:``(F^2 * filter_depth + 1) * filter_num `` (+1 for bias)  
 
-![CNN](\pic\Convolution.png)
+![CNN](pic/Convolution.png)
 
 **Pooling layer**, down sampling, Max pooling
 - makes the representations smaller and more manageable
 - operates over each activation map independently  
 
-![CNN](\pic\Pooling.png)  
+![CNN](pic/Pooling.png)  
 
 **Fully-Connected(FC) layer**
 - Contains neurons that connect to the entire input volume, as in ordinary Neural Networks
@@ -340,27 +340,27 @@ ConvNet is a sequence of Convolutional Layers, interspersed with activation func
 ``[(CONV-RELU)*N-POOL?]*M-(FC-RELU)*K,SOFTMAX`` where N is usually up to ~5, M is large, 0 <= K <= 2.
   - but recent advances such as ResNet/GoogLeNet challenge this paradigm
 #### 2. Case study
-![ILSVRC](\pic\ILSVRC.png)
+![ILSVRC](pic/ILSVRC.png)
 
 **2.1 AlexNet**
-![AlexNet](\pic\AlexNet.png)
+![AlexNet](pic/AlexNet.png)
 **2.2 ZFNet:improved AlexNet**  
 CONV1： from (11×11 stride 4 ) to (7×7 stride 2 )   
 CONV3,4,5: instead of 384, 384, 256 filters use 512, 1024, 512  
 **2.3 VGG16/19**  
 Total Mem：96M/image（forward） $\quad$  Total params:138M params
 
-![vgg](\pic\VGG16.png)   
+![vgg](pic/VGG16.png)   
 
 **2.4 GoogLeNet**
 Stacked inception modules (computation complexity)  
 No FC layers, much less params than AlexNet(12×)
 
-![GoogLeNet](\pic\googlenet.png)
+![GoogLeNet](pic/googlenet.png)
 
 **2.5 ResNet**
 
-![ResNet](\pic\ResNet.png)
+![ResNet](pic/ResNet.png)
 
 **2.6 Dense blocks**  
 - Dense blocks where each layer is connected to every other layer in feed forward fashion
