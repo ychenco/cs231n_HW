@@ -98,7 +98,7 @@ Xwhite = Xrot / np.sqrt(S + 1e-5)
 
 **Batch normalization**  : insert the BatchNorm layer immediately after fully connected layers (or convolutional layers), and before non-linearities.  **significantly more robust to bad initialization,act as a form of regularization**   
 
-![batch_normalization](\pic\batch_normalization.png)
+![batch_normalization](pic/batch_normalization.png)
 
 **Bases initialization**  :
 More common, all zero. Small constant value(0.1) also used to fire in the beginning.  
@@ -294,7 +294,7 @@ cross-validation to determine several best models.
 - Running average of parameters during training.   
 maintain a second copy of the network’s weights in memory that maintains an exponentially decaying sum of previous weights during training to average the state of the network over last several iterations
 
-####2.5 Summary
+#### 2.5 Summary
 - For activation functions, **ReLU** is the most common choice
 - **Fully-Connected layers** : neurons in adjacent layers have full pair-wise connections, but neurons within a layer are not connected.
 - layered architecture enables very efficient evaluation of Neural Networks based on matrix multiplications interwoven with the application of the activation function.
@@ -313,7 +313,7 @@ maintain a second copy of the network’s weights in memory that maintains an ex
 - Search for good hyperparameters with **random search** (not grid search). Stage your search from coarse (wide hyperparameter ranges, training only for 1-5 epochs), to fine (narrower rangers, training for many more epochs)
 - Form model ensembles for extra performance
 
-####2.6 Example for paramter adjusting
+#### 2.6 Example for paramter adjusting
 ![loss and accuracy](pic/example1.png)
 - The loss is decreasing more or less linearly, which seems to suggest that the **learning rate** may be too **low**. Moreover, there is no gap between the training and validation accuracy, suggesting that the model we used has **low capacity**, and that we should increase its size. 
 ### CNN  
